@@ -29,9 +29,9 @@ spec:
             steps {
                 container('git') {
                         script {
-                          {
+                          
                             sh "git clone https://github.com/mynickwasbusy/habr-demo-app"
-                            }
+                            
                         }
                     }
                 }
