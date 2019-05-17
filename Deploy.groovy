@@ -36,7 +36,6 @@ spec:
                     }
                 }
             }
-        }
         stage('Deploy to env') {
             steps {
                 container('helm-cli') {
