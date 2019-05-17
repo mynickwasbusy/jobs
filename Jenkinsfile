@@ -1,24 +1,4 @@
-properties([
-        parameters(
-                [
-                        stringParam(
-                                name: 'GIT_REPO',
-                                defaultValue: ''
-                        ),
-                        stringParam(
-                                name: 'VERSION',
-                                defaultValue: ''
-                        ),
-                        choiceParam(
-                                name: 'ENV',
-                                choices: ['test', 'staging', 'production']
-                        )
-                ]
-        )
-])
-
 pipeline {
-
     agent {
         kubernetes {
             label 'deploy-service-pod'
@@ -51,8 +31,6 @@ spec:
                         script {
                           {
                             sh "git clone https://github.com/mynickwasbusy/habr-demo-app"
-                            dir ("${params.GIT_REPO}") {
-                                sh "git checkout ${revision}"
                             }
                         }
                     }
