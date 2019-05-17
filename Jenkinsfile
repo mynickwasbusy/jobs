@@ -48,10 +48,9 @@ spec:
         stage('Find deployment descriptor') {
             steps {
                 container('git') {
-                    script {
-                        def revision = params.VERSION.substring(0, 7)
+                        script {
                           {
-                            sh "git clone https://github.com/mynickwasbusy/${params.GIT_REPO}.git"
+                            sh "git clone https://github.com/mynickwasbusy/habr-demo-app"
                             dir ("${params.GIT_REPO}") {
                                 sh "git checkout ${revision}"
                             }
