@@ -31,6 +31,7 @@ spec:
                         script {
                           
                             sh "git clone https://github.com/mynickwasbusy/habr-demo-app"
+                            sh "git checkout ${revision}"
                             
                         }
                     }
