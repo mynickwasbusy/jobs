@@ -45,7 +45,7 @@ spec:
                 container('helm-cli') {
                     script {
                         def chart = params.GIT_REPO.toLowerCase()
-                        def chartVersion = sh(script: "/helm history staging-${chart} | grep DEPLOYED | awk '{ print \$8 }'", returnStdout: true).trim()
+                        def chartVersion = sh(script: "/helm history staging-${chart} | grep DEPLOYED | awk '{ print $8 }'", returnStdout: true).trim()
 
                         version = chartVersion.substring(chart.length() + 1)
                         revision = version.substring(0, 7)
