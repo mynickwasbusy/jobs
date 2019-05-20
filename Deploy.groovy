@@ -42,7 +42,7 @@ spec:
                     script {
                         dir ("${params.GIT_REPO}") {
                             sh "./helm/setRevision.sh ${params.VERSION}"
-                            def registryIp = sh(script: 'getent hosts registry.kube-system | awk \'{ print $1 ; exit }\'', returnStdout: true).trim()
+                            //def registryIp = sh(script: 'getent hosts registry.kube-system | awk \'{ print $1 ; exit }\'', returnStdout: true).trim()
                             sh "/helm upgrade ${params.ENV}-${params.GIT_REPO.toLowerCase()} helm/ --install --namespace ${params.ENV} --set registry=${registryIp}"
                         }
                     }
