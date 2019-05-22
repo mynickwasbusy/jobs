@@ -30,7 +30,7 @@ spec:
                 container('git') {
                         script {
                           
-                            sh "git clone https://github.com/mynickwasbusy/habr-demo-app"
+                            sh "git clone https://github.com/mynickwasbusy/demo-app"
                           
                         }
                     }
